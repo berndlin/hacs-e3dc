@@ -39,7 +39,7 @@ It integrates with E3/DC devices via the **RSCP protocol** (Remote Storage Contr
 - If configuration entries are missing or invalid, provide a detailed error and remediation options, then ask the developer whether to require manual correction, retry with adjusted input, or abort setup
 - Translations go into `translations/` (en.json minimum); add keys before referencing them in code
 - Follow HA's `CoordinatorEntity` pattern; never store state in entities directly
-- Coding best practices must follow established Homeassistant integration rules. Fall back to Python best practices when HA conventions are not specific.
+- Coding best practices must follow established Home Assistant integration rules. Fall back to Python best practices when HA conventions are not specific.
 
 ### RSCP / E3/DC protocol & Mandatory Proxy Pattern
 

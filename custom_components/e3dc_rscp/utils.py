@@ -23,7 +23,7 @@ async def initialize_farm_controller_flow_if_needed(
     _LOGGER.debug(f"Found remote control IP: {remote_control_ip}")
 
     if remote_control_ip:
-        """ Initiate sub-flow for farm controller configuration. """
+        # Initiate sub-flow for farm controller configuration.
 
         parts = remote_control_ip.rsplit(":", 1)
         if len(parts) == 2:
@@ -31,7 +31,7 @@ async def initialize_farm_controller_flow_if_needed(
             port = int(parts[1])
             controller_found = False
 
-            """ try to find existing controller entry """
+            # Try to find existing controller entry
             for entry in hass.config_entries.async_entries(DOMAIN):
                 is_host_and_port_match = (
                     entry.data.get(CONF_HOST) == host
