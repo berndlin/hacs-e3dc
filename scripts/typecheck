@@ -4,4 +4,4 @@ set -e
 
 cd "$(dirname "$0")/.."
 
-pyright
+pyright custom_components/e3dc_rscp
