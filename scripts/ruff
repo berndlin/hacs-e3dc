@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -e
+
+cd "$(dirname "$0")/.."
+
+ruff check custom_components/e3dc_rscp --fix
+ruff format custom_components/e3dc_rscp
