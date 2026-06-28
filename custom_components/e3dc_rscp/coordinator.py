@@ -412,6 +412,12 @@ class E3DCCoordinator(DataUpdateCoordinator[dict[str, Any]]):
             _LOGGER.warning("Failed to load system status, not updating data: %s", ex)
             return
 
+        if "pvDerated" not in system_status:
+            _LOGGER.debug(
+                "System status did not include pvDerated, keeping previous PV derated state"
+            )
+            return
+
         self._mydata["system-pv-derated"] = bool(system_status["pvDerated"])
 
     async def _load_and_process_poll(self):
